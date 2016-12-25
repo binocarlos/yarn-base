@@ -1,5 +1,7 @@
 # yarn-base
 
+Base image with node:5.2.0-slim + yarn
+
 ```
 FROM node:5.2.0-slim
 MAINTAINER kaiyadavenport@gmail.com
