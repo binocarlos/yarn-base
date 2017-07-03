@@ -1,27 +1,8 @@
-# yarn-base
-
-`node:8.1.2` with yarn and local module cache for quick installs
-
-## Dockerfile
-
-```
-FROM node:8.1.2
-MAINTAINER kaiyadavenport@gmail.com
-RUN apt-get update && \
-    apt-get install -y curl && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && \
-    apt-get install -y yarn
-WORKDIR /app
-ADD package.json /app/package.json
-RUN yarn install
-```
-
-## node packages
-
-```json
 {
+  "name": "yarn-base",
+  "private": true,
+  "version": "1.0.0",
+  "description": "collection of commonly used modules",
   "dependencies": {
     "axios": "^0.15.3",
     "http-proxy": "^1.16.2",
@@ -94,6 +75,6 @@ RUN yarn install
     "passport": "^0.3.2",
     "pg": "^6.1.2"
 
-  }
+  },
+  "license": "MIT"
 }
-```
